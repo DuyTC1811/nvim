@@ -36,13 +36,16 @@ return require('packer').startup(function(use)
         'mfussenegger/nvim-dap',
         'theHamsta/nvim-dap-virtual-text',
         'rcarriga/nvim-dap-ui',
-        'simrat39/rust-tools.nvim'
+        'simrat39/rust-tools.nvim',
+        'rust-lang/rust.vim'
     }
     use {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
     }
+
+    use 'kdheepak/lazygit.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'windwp/nvim-autopairs'
@@ -54,7 +57,7 @@ return require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
     use 'rcarriga/nvim-notify'
     use 'lewis6991/impatient.nvim'                                              -- Makes neovim faster
-    use { 'j-hui/fidget.nvim', tag = 'legacy' }                                                     -- show status of nvim-lsp progress
+    use { 'j-hui/fidget.nvim', tag = 'legacy' }                                 -- show status of nvim-lsp progress
     if packer_bootstrap then
         require('packer').sync()
     end
