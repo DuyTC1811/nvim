@@ -5,6 +5,7 @@ require('nv-keymaps')
 require('nv-plugins')
 
 require('nv-lsp')
+require('nv-dap')
 require('nv-rust')
 require('nv-tree')
 require('nv-fidget')
