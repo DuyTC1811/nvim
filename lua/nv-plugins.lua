@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
     use 'rcarriga/nvim-notify'
     use 'lewis6991/impatient.nvim'                                              -- Makes neovim faster
-    use 'j-hui/fidget.nvim'                                                     -- show status of nvim-lsp progress
+    use { 'j-hui/fidget.nvim', tag = 'legacy' }                                                     -- show status of nvim-lsp progress
     if packer_bootstrap then
         require('packer').sync()
     end

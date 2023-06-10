@@ -2,15 +2,7 @@
 local status, lspconfig = pcall(require, 'lspconfig')
 if (not status) then return end
 
-lspconfig.rust_analyzer.setup {
-    settings = {
-        ['rust-analyzer'] = {
-            diagnostics = {
-                enable = false;
-            }
-        },
-    },
-}
+lspconfig.rust_analyzer.setup({})
 
 lspconfig.lua_ls.setup {
     settings = {
