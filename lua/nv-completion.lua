@@ -64,11 +64,15 @@ cmp.setup({
 
     },
     preselect = cmp.PreselectMode.None,
-    confirmation = {
-        get_commit_characters = function(commit_characters)
-            return {}
-        end
+    diagnostics = {
+    enable = true,  -- Bật chẩn đoán
+    icons = {
+      hint = "",
+      information = "",
+      warning = "",
+      error = "",
     },
+  },
 })
 
 -- `/` cmdline setup.
