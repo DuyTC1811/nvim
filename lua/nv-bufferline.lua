@@ -1,2 +1,5 @@
 vim.opt.termguicolors = true
-require("bufferline").setup({})
+local status, bufferline = pcall(require, 'bufferline')
+if (not status) then return end
+
+bufferline.setup({})

@@ -1,4 +1,5 @@
-local rust_tool = require("rust-tools")
+local status, rust_tool= pcall(require, 'rust-tools')
+if (not status) then return end
 
 -- local mason_registry = require("mason-registry")
 -- local codelldb = mason_registry.get_package("codelldb")
