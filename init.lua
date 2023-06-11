@@ -1,5 +1,4 @@
-require('impatient')
-
+vim.loader.enable()
 require('nv-options')
 require('nv-keymaps')
 require('nv-plugins')
