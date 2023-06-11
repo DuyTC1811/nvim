@@ -12,7 +12,7 @@ require('lazy').setup({
   'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope-fzf-native.nvim', run = 'make',
   'kyazdani42/nvim-tree.lua',
-  
+
   'neovim/nvim-lspconfig',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
@@ -29,6 +29,9 @@ require('lazy').setup({
   'rcarriga/nvim-dap-ui',
   'simrat39/rust-tools.nvim',
   'rust-lang/rust.vim',
+
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
 
   'kdheepak/lazygit.nvim',
   'lewis6991/gitsigns.nvim',
