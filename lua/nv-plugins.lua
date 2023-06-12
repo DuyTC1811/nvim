@@ -40,7 +40,7 @@ require('lazy').setup({
   'projekt0n/github-nvim-theme',
   'nvim-lualine/lualine.nvim',
   { 'akinsho/bufferline.nvim', version = '*' },
-  'numToStr/FTerm.nvim',
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
   'nvim-tree/nvim-web-devicons',
   'karb94/neoscroll.nvim',
   'rcarriga/nvim-notify',
