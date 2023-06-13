@@ -7,4 +7,4 @@ vim.g.lazygit_use_neovim_remote = 1                                             
 vim.g.lazygit_use_custom_config_file_path = 0                                   -- config file path is evaluated if this value is 1
 vim.g.lazygit_config_file_path = ''                                             -- custom config file path
 
-vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>g', ':LazyGit<CR>', { silent = true })
