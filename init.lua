@@ -1,23 +1,29 @@
 vim.loader.enable()
-require('nv-options')
-require('nv-keymaps')
-require('nv-plugins')
 
-require('nv-lsp')
-require('nv-dap')
-require('nv-rust')
-require('nv-tree')
-require('nv-fidget')
-require('nv-togglerm')
-require('nv-mason')
-require('nv-lazygit')
-require('nv-colorscheme')
-require('nv-treesitter')
-require('nv-notify')
-require('nv-gitsigns')
-require('nv-lualine')
-require('nv-bufferline')
-require('nv-neoscroll')
-require('nv-telescope')
-require('nv-completion')
-require('nv-dashboard')
+local conf_files = {
+  'nv-options',
+  'nv-keymaps',
+  'nv-plugins',
+  'nv-lsp',
+  'nv-dap',
+  'nv-rust',
+  'nv-tree',
+  'nv-fidget',
+  'nv-togglerm',
+  'nv-mason',
+  'nv-lazygit',
+  'nv-colorscheme',
+  'nv-treesitter',
+  'nv-notify',
+  'nv-gitsigns',
+  'nv-lualine',
+  'nv-bufferline',
+  'nv-neoscroll',
+  'nv-telescope',
+  'nv-completion',
+  'nv-dashboard',
+}
+
+for _, name in ipairs(conf_files) do
+  require(name)
+end
