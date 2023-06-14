@@ -24,4 +24,5 @@ tree.setup({
 -- set up keyboard shortcuts for NvimTree
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opt )
 vim.api.nvim_set_keymap('n', '<Leader>fc', ':NvimTreeFindFile<CR>', opt )
+vim.api.nvim_set_keymap('n', '<Leader>fr', ':NvimTreeRefresh<CR>', opt )
 
