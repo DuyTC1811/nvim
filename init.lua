@@ -22,6 +22,7 @@ local conf_files = {
   'nv-telescope',
   'nv-completion',
   'nv-dashboard',
+  'nv-autosave',
 }
 
 for _, name in ipairs(conf_files) do

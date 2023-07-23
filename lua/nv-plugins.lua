@@ -46,6 +46,7 @@ require('lazy').setup({
   'rcarriga/nvim-notify',
   'lewis6991/impatient.nvim',
   { 'j-hui/fidget.nvim', tag = 'legacy' },
-  'glepnir/dashboard-nvim', event = 'VimEnter'
+  'glepnir/dashboard-nvim', event = 'VimEnter',
+  'Pocco81/auto-save.nvim'
 })
 
