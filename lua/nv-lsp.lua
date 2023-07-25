@@ -37,6 +37,14 @@ lspconfig.lua_ls.setup {
   },
 }
 
+lspconfig.tsserver.setup {
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" },
+  root_dir = lspconfig.util.root_pattern ( "package.json", "tsconfig.json", "jsconfig.json", ".git" ),
+  init_options = { hostInfo = "neovim" },
+  single_file_support = true
+}
+
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)

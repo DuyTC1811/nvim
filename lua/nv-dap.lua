@@ -4,6 +4,9 @@ if (not statusDap) then return end
 local statusDapui, dapui = pcall(require, 'dapui')
 if (not statusDapui) then return end
 
+local statusMasondap, mason_dap = pcall(require, 'mason-nvim-dap')
+if (not statusMasondap) then return end
+
 dapui.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -15,6 +18,12 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
+mason_dap.setup({
+  ensure_installed = {'codelldb'},
+  automatic_installation = false,
+  handlers = nil,
+})
 
 vim.keymap.set('n', '<F5>', require 'dap'.continue)
 vim.keymap.set('n', '<F10>', require 'dap'.step_over)

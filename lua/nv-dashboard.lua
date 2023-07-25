@@ -26,7 +26,7 @@ dashboard.setup({
       {
         desc = ' Dotfiles',
         group = 'number',
-        action = 'telescope dotfiles',
+        action = '../init.lua',
         key = 'd',
       },
       {

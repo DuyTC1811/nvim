@@ -32,6 +32,7 @@ require('lazy').setup({
 
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
+  'jay-babu/mason-nvim-dap.nvim',
 
   'kdheepak/lazygit.nvim',
   'lewis6991/gitsigns.nvim',
