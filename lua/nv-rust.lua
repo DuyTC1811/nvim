@@ -1,11 +1,11 @@
 local status, rust_tool= pcall(require, 'rust-tools')
 if (not status) then return end
 
--- local mason_registry = require("mason-registry")
--- local codelldb = mason_registry.get_package("codelldb")
--- local extension_path = codelldb:get_install_path() .. "/extension/"
--- local codelldb_path = extension_path .. "adapter/codelldb"
--- local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+local path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/") or ""
+local codelldb_path = path .. "adapter/codelldb"
+local liblldb_path = path .. "lldb/lib/liblldb.dylib"
+
+if vim.fn.filereadable(codelldb_path) and vim.fn.filereadable(liblldb_path) then
 
 rust_tool.setup({
     dap = {
@@ -25,3 +25,7 @@ rust_tool.setup({
     },
 })
 
+else
+  local msg = 'Either codelldb or liblldb is not readable !'
+  vim.notify(msg, vim.log.levels.ERROR)
+end
