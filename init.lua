@@ -23,6 +23,7 @@ local conf_files = {
   'nv-completion',
   'nv-dashboard',
   'nv-autosave',
+  'nv-autotag'
 }
 
 for _, name in ipairs(conf_files) do

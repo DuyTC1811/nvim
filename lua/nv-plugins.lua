@@ -48,6 +48,7 @@ require('lazy').setup({
   'lewis6991/impatient.nvim',
   { 'j-hui/fidget.nvim', tag = 'legacy' },
   'glepnir/dashboard-nvim', event = 'VimEnter',
-  'Pocco81/auto-save.nvim'
+  'Pocco81/auto-save.nvim',
+  'windwp/nvim-ts-autotag'
 })
 
