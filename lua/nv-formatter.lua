@@ -1,0 +1,6 @@
+-- vim.cmd([[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost * Prettierd
+-- augroup END
+-- ]])

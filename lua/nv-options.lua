@@ -12,6 +12,9 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 -----------------------------------------------------------
 ------------------------ General --------------------------
 -----------------------------------------------------------
+vim.scriptencoding = 'UTF-8'
+opt.encoding = 'UTF-8'
+opt.fileencoding = 'UTF-8'
 opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile

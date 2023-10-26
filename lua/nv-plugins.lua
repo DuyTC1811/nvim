@@ -46,9 +46,12 @@ require('lazy').setup({
   'karb94/neoscroll.nvim',
   'rcarriga/nvim-notify',
   'lewis6991/impatient.nvim',
-  { 'j-hui/fidget.nvim', tag = 'legacy' },
+  'vigoux/notifier.nvim',
   'glepnir/dashboard-nvim', event = 'VimEnter',
   'Pocco81/auto-save.nvim',
-  'windwp/nvim-ts-autotag'
+  'windwp/nvim-ts-autotag',
+  'Civitasv/cmake-tools.nvim',
+  'towolf/vim-helm'
+
 })
 

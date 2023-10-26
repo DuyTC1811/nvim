@@ -55,7 +55,7 @@ cmp.setup({
                     nvim_lsp = 'λ ',
                     luasnip = '⋗ ',
                     buffer = 'Ω ',
-                    path = '🖫 ',
+                    path = 'Path',
                 }
                 vim_item.menu = menu_icon[entry.source.name]
                 return vim_item
@@ -76,7 +76,7 @@ cmp.setup({
 })
 
 -- `/` cmdline setup.
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({'/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
