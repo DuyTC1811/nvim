@@ -2,18 +2,15 @@ local status, autoSave = pcall(require, 'auto-save')
 if (not status) then return end
 
 autoSave.setup {
-  enabled = true,        -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+  enabled = true,
   execution_message = {
     message = function() -- message to print on save
       return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
     end,
-    dim = 0.18,                                      -- dim the color of `message`
-    cleaning_interval = 1250,                        -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
+    dim = 0.18,
+    cleaning_interval = 1250,
   },
-  trigger_events = { "InsertLeave", "TextChanged" }, -- vim events that trigger auto-save. See :h events
-  -- function that determines whether to save the current buffer or not
-  -- return true: if buffer is ok to be saved
-  -- return false: if it's not ok to be saved
+  trigger_events = { "InsertLeave", "TextChanged" },
   condition = function(buf)
     local fn = vim.fn
     local utils = require("auto-save.utils.data")
@@ -22,8 +19,7 @@ autoSave.setup {
         fn.getbufvar(buf, "&modifiable") == 1 and
         utils.not_in(fn.getbufvar(buf, "&filetype"), {}) then
       return true                -- met condition(s), can save
-    end
-    return false                 -- can't save
+    end return false                 -- can't save
   end,
   write_all_buffers = false,     -- write all buffers when the current one meets `condition`
   debounce_delay = 135,          -- saves the file at most every `debounce_delay` milliseconds

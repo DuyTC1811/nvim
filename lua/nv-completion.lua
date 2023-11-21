@@ -11,7 +11,7 @@ cmp.setup({
     -- Enable LSP snippets
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)                            -- For `luasnip` users.
         end,
     },
     mapping = {
@@ -26,36 +26,35 @@ cmp.setup({
     },
     -- Installed sources:
     sources = {
-        { name = 'path' }, -- file paths
-        { name = 'nvim_lsp', keyword_length = 1, priority = 10 }, -- from language server
+        { name = 'path' },                                                      -- file paths
+        { name = 'nvim_lsp', keyword_length = 1, priority = 10 },               -- from language server
         { name = 'crates', keyword_length = 1, priority = 10 },
-        { name = 'luasnip', keyword_length = 1, priority = 7 }, -- for lua users
-        { name = 'nvim_lsp_signature_help', priority = 8 }, -- display function signatures with current parameter emphasized
-        { name = 'nvim_lua', keyword_length = 1, priority = 8 }, -- complete neovim's Lua runtime API such vim.lsp.*
-        { name = 'buffer', keyword_length = 1, priority = 5 }, -- source current buffer
-        { name = 'calc' }, -- source for math calculation
+        { name = 'luasnip', keyword_length = 1, priority = 7 },                 -- for lua users
+        { name = 'nvim_lsp_signature_help', priority = 8 },                     -- display function signatures with current parameter emphasized
+        { name = 'nvim_lua', keyword_length = 1, priority = 8 },                -- complete neovim's Lua runtime API such vim.lsp.*
+        { name = 'buffer', keyword_length = 1, priority = 5 },                  -- source current buffer
+        { name = 'calc' },                                                      -- source for math calculation
     },
     window = {
-        completion = {
-            cmp.config.window.bordered(),
-            col_offset = 3,
-            side_padding = 1,
-        },
-        documentation = cmp.config.window.bordered(),
-
+      completion = cmp.config.window.bordered({
+        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
+      }),
+      documentation = cmp.config.window.bordered({
+        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
+      }),
     },
     formatting = {
-        fields = { 'menu', 'abbr', 'kind' },
+--         fields = { 'menu', 'abbr', 'kind' },
         format = lspkind.cmp_format({
-            mode = 'symbol_text', -- show only symbol annotations
-            maxwidth = 60, -- prevent the popup from showing more than provided characters
+            mode = 'symbol_text',                                               -- show only symbol annotations
+            maxwidth = 60,                                                      -- prevent the popup from showing more than provided characters
             -- The function below will be called before any actual modifications from lspkind:
             before = function(entry, vim_item)
                 local menu_icon = {
-                    nvim_lsp = 'λ ',
-                    luasnip = '⋗ ',
-                    buffer = 'Ω ',
-                    path = 'Path',
+                    nvim_lsp = '[Lsp]',
+                    luasnip = '[Luasnip]',
+                    buffer = '[Buffer]',
+                    path = '[Path]',
                 }
                 vim_item.menu = menu_icon[entry.source.name]
                 return vim_item
@@ -67,10 +66,10 @@ cmp.setup({
     diagnostics = {
     enable = true,  -- Bật chẩn đoán
     icons = {
-      hint = "",
-      information = "",
-      warning = "",
-      error = "",
+      hint = '󰌶 ',
+      information = ' ',
+      warning = ' ',
+      error = ' ',
     },
   },
 })

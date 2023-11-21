@@ -4,8 +4,7 @@ if (not status) then return end
 gitsign.setup {
   signs = {
     add          = { text = '│' },
-    change       = { text = '│' },
-    delete       = { text = '_' },
+    change       = { text = '│' }, delete       = { text = '_' },
     topdelete    = { text = '‾' },
     changedelete = { text = '~' },
     untracked    = { text = '┆' },

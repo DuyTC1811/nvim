@@ -63,8 +63,7 @@ opt.shortmess:append "sI"
 -- -- Disable builtin plugins
 local disabled_built_ins = {
    "2html_plugin",
-   "getscript",
-   "getscriptPlugin",
+   "getscript", "getscriptPlugin",
    "gzip",
    "logipat",
    "netrw",

@@ -8,7 +8,7 @@ local conf_files = {
   'nv-dap',
   'nv-rust',
   'nv-tree',
-  'nv-fidget',
+  'nv-notifier',
   'nv-togglerm',
   'nv-mason',
   'nv-lazygit',
@@ -23,7 +23,9 @@ local conf_files = {
   'nv-completion',
   'nv-dashboard',
   'nv-autosave',
-  'nv-autotag'
+  'nv-autotag',
+  'nv-formatter',
+  'nv-cmake'
 }
 
 for _, name in ipairs(conf_files) do

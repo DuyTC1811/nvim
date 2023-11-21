@@ -37,7 +37,7 @@ require('lazy').setup({
   'kdheepak/lazygit.nvim',
   'lewis6991/gitsigns.nvim',
   'nvim-treesitter/nvim-treesitter',
-  'windwp/nvim-autopairs',
+  {'windwp/nvim-autopairs', event = 'InsertEnter'},
   'projekt0n/github-nvim-theme',
   'nvim-lualine/lualine.nvim',
   { 'akinsho/bufferline.nvim', version = '*' },
@@ -51,7 +51,8 @@ require('lazy').setup({
   'Pocco81/auto-save.nvim',
   'windwp/nvim-ts-autotag',
   'Civitasv/cmake-tools.nvim',
-  'towolf/vim-helm'
+  'towolf/vim-helm',
+  'stevearc/conform.nvim'
 
 })
 
