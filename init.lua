@@ -1,5 +1,3 @@
-vim.loader.enable()
-
 local conf_files = {
   'nv-options',
   'nv-keymaps',
@@ -31,3 +29,5 @@ local conf_files = {
 for _, name in ipairs(conf_files) do
   require(name)
 end
+
+vim.loader.enable()
