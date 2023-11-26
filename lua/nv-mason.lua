@@ -1,5 +1,5 @@
 local status, mason = pcall(require, 'mason')
-if (not status) then return end
+if (not status) then vim.notify('mason: is not installed! ', vim.log.levels.WARN) return end
 
 mason.setup({
     ui = {
@@ -10,3 +10,21 @@ mason.setup({
         }
     },
 })
+
+require("mason-lspconfig").setup {
+    ensure_installed = {
+      'clangd',
+      'lua_ls',
+      'neocmake',
+      'rust_analyzer'
+    },
+    automatic_installation = true,
+}
+
+require('mason-tool-installer').setup {
+  ensure_installed = {
+    "prettier", -- prettier formatter
+    "stylua", -- lua formatter
+    'clang-format'
+  },
+}

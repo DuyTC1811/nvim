@@ -1,5 +1,5 @@
 local status, neoscrolls = pcall(require, 'neoscroll')
-if (not status) then return end
+if (not status) then vim.notify('neoscroll: is not installed! ', vim.log.levels.WARN) return end
 
 neoscrolls.setup({
     easing_function = "quadratic" -- Default easing function

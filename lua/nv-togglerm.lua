@@ -1,5 +1,5 @@
 local status, toggleterm = pcall(require, 'toggleterm')
-if (not status) then return end
+if (not status) then vim.notify('toggleterm: is not installed! ', vim.log.levels.WARN) return end
 toggleterm.setup({})
 
 local opt = { noremap = true, silent = true }

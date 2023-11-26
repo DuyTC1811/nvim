@@ -2,7 +2,7 @@ vim.opt.termguicolors = true
 
 vim.notify = require('notify')
 local status, notifys = pcall(require, 'notify')
-if (not status) then return end
+if (not status) then vim.notify('notify: is not installed! ', vim.log.levels.WARN) return end
 
 notifys.setup({
   stages = 'slide',

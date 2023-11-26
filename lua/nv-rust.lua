@@ -1,8 +1,6 @@
 -- Check if the 'rust-tools' plugin is available
 local status, rust_tool = pcall(require, 'rust-tools')
-if not status then
-    return
-end
+if (not status) then vim.notify('rust_tool: is not installed! ', vim.log.levels.WARN) return end
 
 -- Define paths to the 'codelldb' extension and 'liblldb' library
 local data_dir = vim.fn.stdpath("data")

@@ -1,22 +1,9 @@
 -- Setup language servers.
 local status_lsp, lspconfig = pcall(require, 'lspconfig')
-if (not status_lsp) then return end
+if (not status_lsp) then vim.notify('lspconfig: is not installed! ', vim.log.levels.WARN) return end
 
 local status_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not status_cmp then print('cmp_nvim_lsp is not installed') return end
-
- -- local status_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
- -- if (not status_mason_lspconfig) then return end
- -- 
- -- mason_lspconfig.setup({
- --   ensure_installed = {
- --     'clangd',
- --     'codelldb',
- --     'neocmakelsp',
- --   },
- --   automatic_installation = true,
- -- })
-
+if (not status_cmp) then vim.notify('cmp_nvim_lsp: is not installed! ', vim.log.levels.WARN) return end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -51,20 +38,20 @@ end
 
 --------- C++ ----------------
 lspconfig.clangd.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = { 'h', 'c', 'cpp', 'cuda', 'cc', 'objc', 'objcpp', 'proto'},
-    cmd = {"clangd", "--background-index"},
-    single_file_support = true,
-    root_dir = lspconfig.util.root_pattern(
-          '.clangd',
-          '.clang-tidy',
-          '.clang-format',
-          'compile_commands.json',
-          'compile_flags.txt',
-          'configure.ac',
-          '.git'
-        )
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { 'h', 'c', 'cpp', 'cuda', 'cc', 'objc', 'objcpp', 'proto' },
+  cmd = { "clangd", "--background-index" },
+  single_file_support = true,
+  root_dir = lspconfig.util.root_pattern(
+    '.clangd',
+    '.clang-tidy',
+    '.clang-format',
+    'compile_commands.json',
+    'compile_flags.txt',
+    'configure.ac',
+    '.git'
+  )
 })
 
 lspconfig.neocmake.setup({})
@@ -97,7 +84,7 @@ lspconfig.lua_ls.setup {
       runtime = {
         version = 'LuaJIT',
       },
-      diagnostics = { globals = {'vim'},
+      diagnostics = { globals = { 'vim' },
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
@@ -123,7 +110,7 @@ lspconfig.tsserver.setup {
     "typescript-language-server",
     "--stdio"
   },
-  root_dir = lspconfig.util.root_pattern ( "package.json", "tsconfig.json", "jsconfig.json", ".git" ),
+  root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   init_options = { hostInfo = "neovim" },
   single_file_support = true
 }

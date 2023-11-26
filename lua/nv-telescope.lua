@@ -1,5 +1,6 @@
 local status, telescope = pcall(require, 'telescope')
-if (not status) then return end
+if (not status) then vim.notify('telescope: is not installed! ', vim.log.levels.WARN) return end
+
 local actions = require('telescope.actions')
 telescope.setup{
   defaults = {

@@ -1,5 +1,5 @@
-local status , dashboard = pcall(require, 'dashboard')
-if (not status) then return end
+local status, dashboard = pcall(require, 'dashboard')
+if (not status) then vim.notify('dashboard: is not installed! ', vim.log.levels.WARN) return end
 
 dashboard.setup({
   theme = 'hyper',
@@ -39,4 +39,3 @@ dashboard.setup({
     },
   },
 })
-

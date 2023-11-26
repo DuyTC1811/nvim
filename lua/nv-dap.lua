@@ -1,11 +1,11 @@
 local statusDap, dap = pcall(require, 'dap')
-if (not statusDap) then return end
+if (not statusDap) then vim.notify('dap: is not installed! ', vim.log.levels.WARN) return end
 
 local statusDapui, dapui = pcall(require, 'dapui')
-if (not statusDapui) then return end
+if (not statusDapui) then vim.notify('dapui: is not installed! ', vim.log.levels.WARN) return end
 
 local statusVirtual, dapui_virtual = pcall(require, 'nvim-dap-virtual-text')
-if (not statusVirtual) then return end
+if (not statusVirtual) then vim.notify('nvim-dap-virtual-text: is not installed! ', vim.log.levels.WARN) return end
 
 dapui.setup()
 dapui_virtual.setup()

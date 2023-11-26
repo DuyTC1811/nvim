@@ -6,7 +6,7 @@ vim.opt.termguicolors = true
 local opt = { noremap = true, silent = true }
 
 local status, tree = pcall(require, 'nvim-tree')
-if (not status) then return end
+if (not status) then vim.notify('nvim-tree: is not installed! ', vim.log.levels.WARN) return end
 
 tree.setup({
   sort_by = "case_sensitive",

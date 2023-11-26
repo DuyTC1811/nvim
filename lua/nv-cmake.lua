@@ -1,4 +1,7 @@
-require('cmake-tools').setup {
+local status, cmake_tools = pcall(require, 'cmake-tools')
+if (not status) then vim.notify('cmake-tools: is not installed! ', vim.log.levels.WARN) return end
+
+cmake_tools.setup {
   cmake_command = 'cmake',
   cmake_regenerate_on_save = true,
   cmake_generate_options = { '-DCMAKE_EXPORT_COMPILE_COMMANDS=1' },
