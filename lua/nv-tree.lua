@@ -5,24 +5,26 @@ vim.opt.termguicolors = true
 
 local opt = { noremap = true, silent = true }
 
-local status, tree = pcall(require, 'nvim-tree')
-if (not status) then vim.notify('nvim-tree: is not installed! ', vim.log.levels.WARN) return end
+local status, tree = pcall(require, "nvim-tree")
+if not status then
+    vim.notify("nvim-tree: is not installed! ", vim.log.levels.WARN)
+    return
+end
 
 tree.setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
+    sort_by = "case_sensitive",
+    view = {
+        width = 30,
+    },
+    renderer = {
+        group_empty = true,
+    },
+    filters = {
+        dotfiles = true,
+    },
 })
 
 -- set up keyboard shortcuts for NvimTree
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opt )
-vim.api.nvim_set_keymap('n', '<Leader>fc', ':NvimTreeFindFile<CR>', opt )
-vim.api.nvim_set_keymap('n', '<Leader>fr', ':NvimTreeRefresh<CR>', opt )
-
+vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opt)
+vim.api.nvim_set_keymap("n", "<Leader>fc", ":NvimTreeFindFile<CR>", opt)
+vim.api.nvim_set_keymap("n", "<Leader>fr", ":NvimTreeRefresh<CR>", opt)

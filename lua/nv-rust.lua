@@ -1,6 +1,9 @@
 -- Check if the 'rust-tools' plugin is available
-local status, rust_tool = pcall(require, 'rust-tools')
-if (not status) then vim.notify('rust_tool: is not installed! ', vim.log.levels.WARN) return end
+local status, rust_tool = pcall(require, "rust-tools")
+if not status then
+    vim.notify("rust_tool: is not installed! ", vim.log.levels.WARN)
+    return
+end
 
 -- Define paths to the 'codelldb' extension and 'liblldb' library
 local data_dir = vim.fn.stdpath("data")
@@ -8,7 +11,7 @@ local codelldb_path = data_dir .. "/mason/packages/codelldb/extension/adapter/co
 local liblldb_path
 
 -- Set the 'liblldb' path based on the OS (Mac or non-Mac)
-if vim.fn.has('mac') == 1 then
+if vim.fn.has("mac") == 1 then
     liblldb_path = data_dir .. "/mason/packages/codelldb/extension/lldb/lib/liblldb.dylib"
 else
     liblldb_path = data_dir .. "/mason/packages/codelldb/extension/lldb/lib/liblldb.so"
@@ -16,9 +19,10 @@ end
 
 -- Check if both 'codelldb' and 'liblldb' are readable files
 if not (vim.fn.filereadable(codelldb_path) and vim.fn.filereadable(liblldb_path)) then
-    local msg = 'Either codelldb or liblldb is not readable!'
+    local msg = "Either codelldb or liblldb is not readable!"
     vim.notify(msg, vim.log.levels.ERROR)
-    return end
+    return
+end
 
 -- Configure 'rust-tools'
 rust_tool.setup({
@@ -37,4 +41,3 @@ rust_tool.setup({
         },
     },
 })
-
