@@ -18,9 +18,6 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "clangd",
         "lua_ls",
-        "neocmake",
-        "rust_analyzer",
-        "angularls",
     },
     automatic_installation = true,
 })
@@ -29,6 +26,6 @@ require("mason-tool-installer").setup({
     ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "clang-format",
+        "clang-format", -- clang-format
     },
 })

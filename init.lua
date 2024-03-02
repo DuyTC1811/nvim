@@ -4,7 +4,6 @@ local conf_files = {
     "nv-plugins",
     "nv-lsp",
     "nv-dap",
-    "nv-rust",
     "nv-tree",
     "nv-notifier",
     "nv-togglerm",
@@ -21,7 +20,6 @@ local conf_files = {
     "nv-completion",
     "nv-dashboard",
     "nv-autosave",
-    "nv-autotag",
     "nv-formatter",
     "nv-cmake",
 }

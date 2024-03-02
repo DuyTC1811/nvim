@@ -63,25 +63,6 @@ lspconfig.clangd.setup({
 -------- CMaker -----------
 lspconfig.neocmake.setup({})
 
---------- LSP Rust -----------
-lspconfig.rust_analyzer.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    assist = {
-        importPrefix = "by_self",
-    },
-    cargo = {
-        allFeatures = true,
-    },
-    checkOnSave = {
-        command = "clippy",
-    },
-    lens = {
-        references = true,
-        methodReferences = true,
-    },
-})
-
 ------ LSP Lua --------
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
@@ -101,37 +82,6 @@ lspconfig.lua_ls.setup({
             },
         },
     },
-})
-
---------- LSP TS ---------
-lspconfig.tsserver.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = {
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-    },
-    cmd = {
-        "typescript-language-server",
-        "--stdio",
-    },
-    root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-    init_options = { hostInfo = "neovim" },
-    single_file_support = true,
-})
-
--------- Angular -------------
-require("lspconfig").angularls.setup({})
-
--------- Helm Chart ------
-lspconfig.helm_ls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    cmd = { "helm_ls", "serve" },
-    filetypes = { "helm" },
-    root_dir = lspconfig.util.root_pattern("Chart.yaml"),
-    single_file_support = true,
 })
 
 -- Diagnostic symbols in the sign column (gutter)
