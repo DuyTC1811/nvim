@@ -47,7 +47,7 @@ lspconfig.clangd.setup({
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "h", "c", "cpp", "cuda", "cc", "objc", "objcpp", "proto" },
-    cmd = { "clangd", "--background-index" },
+    cmd = { "clangd" },
     single_file_support = true,
     root_dir = lspconfig.util.root_pattern(
         ".clangd",
@@ -61,7 +61,9 @@ lspconfig.clangd.setup({
 })
 
 -------- CMaker -----------
-lspconfig.neocmake.setup({})
+lspconfig.neocmake.setup({
+  capabilities = capabilities
+})
 
 ------ LSP Lua --------
 lspconfig.lua_ls.setup({
