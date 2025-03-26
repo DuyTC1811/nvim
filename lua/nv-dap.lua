@@ -53,14 +53,17 @@ dap.configurations.cpp = {
 dapui.setup()
 dapui_virtual.setup()
 
-dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
 end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-    dapui.close()
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
 end
-dap.listeners.before.event_exited["dapui_config"] = function()
-    dapui.close()
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
 end
 
 vim.keymap.set("n", "<F5>", require("dap").continue)

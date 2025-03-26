@@ -25,7 +25,6 @@ require("mason-lspconfig").setup({
 
 require("mason-tool-installer").setup({
     ensure_installed = {
-        "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "clang-format", -- clang-format
     },
