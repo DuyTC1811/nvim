@@ -39,12 +39,8 @@ cmp.setup({
         { name = "calc" }, -- source for math calculation
     },
     window = {
-        completion = cmp.config.window.bordered({
-            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
-        }),
-        documentation = cmp.config.window.bordered({
-            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
-        }),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     formatting = {
         --         fields = { 'menu', 'abbr', 'kind' },
@@ -54,10 +50,10 @@ cmp.setup({
             -- The function below will be called before any actual modifications from lspkind:
             before = function(entry, vim_item)
                 local menu_icon = {
-                    nvim_lsp = "[Lsp]",
-                    luasnip = "[Luasnip]",
-                    buffer = "[Buffer]",
-                    path = "[Path]",
+                    nvim_lsp = "[ Lsp ]",
+                    luasnip = "[ Luasnip ]",
+                    buffer = "[ Buffer ]",
+                    path = "[ Path ]",
                 }
                 vim_item.menu = menu_icon[entry.source.name]
                 return vim_item

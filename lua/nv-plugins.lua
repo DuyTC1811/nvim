@@ -30,6 +30,7 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp-signature-help",
 
     "mfussenegger/nvim-dap",
+    "leoluz/nvim-dap-go",
     "theHamsta/nvim-dap-virtual-text",
     "rcarriga/nvim-dap-ui",
 

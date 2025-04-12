@@ -60,6 +60,19 @@ lspconfig.clangd.setup({
     ),
 })
 
+-------- Go Language ------
+lspconfig.gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
 -------- CMaker -----------
 lspconfig.neocmake.setup({
   capabilities = capabilities
