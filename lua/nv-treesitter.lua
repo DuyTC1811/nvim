@@ -5,7 +5,7 @@ if not status then
 end
 
 treesitter.setup({
-    ensure_installed = { "c", "lua", "rust", "vimdoc" },
+    ensure_installed = { "c", "go", "lua", "rust", "vimdoc" },
     sync_install = false,
     auto_install = true,
     highlight = {

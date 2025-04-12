@@ -23,9 +23,3 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
-require("mason-tool-installer").setup({
-    ensure_installed = {
-        "stylua", -- lua formatter
-        "clang-format", -- clang-format
-    },
-})

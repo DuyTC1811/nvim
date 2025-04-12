@@ -6,9 +6,10 @@ end
 
 conform.setup({
     formatters_by_ft = {
-        lua = { "stylua" },
-        c = { "clang-format" },
-        cpp = { "clang-format" },
+        lua   = { "stylua" },
+        c     = { "clang-format" },
+        cpp   = { "clang-format" },
+        go    = { "gofmt" },
     },
     vim.keymap.set({ "n", "v" }, "<leader>f", function()
         conform.format({
