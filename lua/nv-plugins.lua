@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system({
         "git", "clone", "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git", "--branch=stable",
@@ -19,6 +19,7 @@ require("lazy").setup({
     "kyazdani42/nvim-tree.lua",
 
     "neovim/nvim-lspconfig",
+    "folke/lazydev.vim",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -33,6 +34,7 @@ require("lazy").setup({
     "leoluz/nvim-dap-go",
     "theHamsta/nvim-dap-virtual-text",
     "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",

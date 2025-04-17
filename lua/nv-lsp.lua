@@ -42,6 +42,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 end
 
+require("neodev").setup({})
+
 --------- C++ ----------------
 lspconfig.clangd.setup({
     capabilities = capabilities,
@@ -62,20 +64,20 @@ lspconfig.clangd.setup({
 
 -------- Go Language ------
 lspconfig.gopls.setup({
-  settings = {
-    gopls = {
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-      gofumpt = true,
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+        },
     },
-  },
 })
 
 -------- CMaker -----------
 lspconfig.neocmake.setup({
-  capabilities = capabilities
+    capabilities = capabilities,
 })
 
 ------ LSP Lua --------
@@ -89,7 +91,11 @@ lspconfig.lua_ls.setup({
             },
             diagnostics = { globals = { "vim" } },
             workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
+                library = {
+                    vim.env.VIMRUNTIME,
+                    "${3rd}/luv/library",
+                    "${3rd}/busted/library",
+                },
                 checkThirdParty = false,
             },
             telemetry = {
