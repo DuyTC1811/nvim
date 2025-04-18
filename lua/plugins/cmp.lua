@@ -8,11 +8,11 @@ return {
       ['<C-e>'] = { 'hide', 'fallback' },
       ['<CR>'] = { 'accept', 'fallback' },
 
-      ['<Tab>'] = { 'snippet_forward', 'fallback' },
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
 
-      ['<Up>'] = { 'select_prev', 'fallback' },
-      ['<Down>'] = { 'select_next', 'fallback' },
+      ['<Up>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+      ['<Down>'] = { 'select_next', 'snippet_forward', 'fallback' },
       ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
       ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
 
