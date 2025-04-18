@@ -19,16 +19,10 @@ keymap("n", "<C-l>", "<C-w>l", opts) -- sang phải
 -------------------------------------
 --------[ RESIZE WINDOWS]------------
 -------------------------------------
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)             -- nhỏ chiều dọc
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)           -- to chiều dọc
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)  -- nhỏ ngang
+keymap("n", "<C-Up>", ":resize -2<CR>", opts) -- nhỏ chiều dọc
+keymap("n", "<C-Down>", ":resize +2<CR>", opts) -- to chiều dọc
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- nhỏ ngang
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- to ngang
-
--------------------------------------
--------[ MOVE BETWEEN BUFFER ]-------
--------------------------------------
-keymap("n", "<S-l>", ":bnext<CR>", opts)     -- buffer tiếp theo
-keymap("n", "<S-h>", ":bprevious<CR>", opts) -- buffer trước
 
 -------------------------------------
 ---------[ MOVE CURRENT LINE ]-------
@@ -43,7 +37,6 @@ keymap("i", "jk", "<ESC>", opts) -- exit insert
 -------------------------------------
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 
 -------------------------------------
 -----[ MOVE SELECT PARAGRAPH ]-------
@@ -72,6 +65,3 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -------------------------------------
 keymap("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
 keymap("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
-
-
-
