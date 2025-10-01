@@ -1,22 +1,26 @@
 return {
-  'neovim/nvim-lspconfig',
-  dependencies = { 'saghen/blink.cmp' },
-  opts = {
-    servers = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
+    "neovim/nvim-lspconfig",
+    dependencies = { "saghen/blink.cmp" },
+    opts = {
+        servers = {
+            gopls = {
+                analyses = {
+                    unusedparams = true,
+                },
+                staticcheck = true,
+                gofumpt = true,
             },
-            staticcheck = true,
-            gofumpt = true,
         },
-    }
-  },
-  config = function(_, opts)
-    local lspconfig = require('lspconfig')
-    for server, config in pairs(opts.servers) do
-      config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup(config)
-    end
-  end
+    },
+    config = function(_, opts)
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+        for server, config in ipairs(opts.servers) do
+            config.capabilities = vim.tbl_deep_extend("force", config.capabilities or {}, capabilities or {})
+
+            vim.lsp.config(server, config)
+            -- enable server
+            vim.lsp.enable(server)
+        end
+    end,
 }
