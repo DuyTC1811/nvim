@@ -1,12 +1,12 @@
 -------------------------------------
-----------[ GENARAL SETING ]---------
+----------[ GENERAL SETTINGS ]--------
 -------------------------------------
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 ---------[ TURN OF HIGHLIGHT ]-------
-keymap("n", "<ESC>", ":nohlsearch<CR>", opts)
+keymap("n", "<Esc>", "<Cmd>nohlsearch<CR>", opts)
 
 -------------------------------------
 -----[ MOVE BETWEEN WINDOWS ]--------
@@ -19,18 +19,18 @@ keymap("n", "<C-l>", "<C-w>l", opts) -- sang phải
 -------------------------------------
 --------[ RESIZE WINDOWS]------------
 -------------------------------------
-keymap("n", "<C-Up>", ":resize -2<CR>", opts) -- nhỏ chiều dọc
-keymap("n", "<C-Down>", ":resize +2<CR>", opts) -- to chiều dọc
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- nhỏ ngang
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- to ngang
+keymap("n", "<C-Up>", "<Cmd>resize -2<CR>", opts) -- nhỏ chiều dọc
+keymap("n", "<C-Down>", "<Cmd>resize +2<CR>", opts) -- to chiều dọc
+keymap("n", "<C-Left>", "<Cmd>vertical resize -2<CR>", opts) -- nhỏ ngang
+keymap("n", "<C-Right>", "<Cmd>vertical resize +2<CR>", opts) -- to ngang
 
 -------------------------------------
 ---------[ MOVE CURRENT LINE ]-------
 -------------------------------------
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts) -- move down
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts) -- move up
+keymap("n", "<A-j>", "<Cmd>m .+1<CR>==", opts) -- move down
+keymap("n", "<A-k>", "<Cmd>m .-2<CR>==", opts) -- move up
 
-keymap("i", "jk", "<ESC>", opts) -- exit insert
+keymap("i", "jk", "<Esc>", opts) -- exit insert
 
 -------------------------------------
 -----[ KEEP SELECTION INTACT ]-------
@@ -41,16 +41,16 @@ keymap("v", ">", ">gv", opts)
 -------------------------------------
 -----[ MOVE SELECT PARAGRAPH ]-------
 -------------------------------------
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -------------------------------------
 -----[ MOVE BLOCK UP/DOWN ]-------
 -------------------------------------
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv=gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv=gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv=gv", opts)
 
 -------------------------------------
 -----[ MOVE WINDOWS IN TERMINAL ]----
